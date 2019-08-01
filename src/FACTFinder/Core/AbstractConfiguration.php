@@ -191,6 +191,7 @@ abstract class AbstractConfiguration implements ConfigurationInterface
             'advisorStatus' => true,
             'callback' => true,
             'campaign' => true,
+            'c' => true,
             'catalog' => true,
             'channel' => true,
             'cookieId' => true,
