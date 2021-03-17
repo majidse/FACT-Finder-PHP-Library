@@ -926,8 +926,8 @@ class Search extends PersonalisedResponse
         // Fetch advisor tree if it exists
         $advisorTree = array();
 
-        foreach ($campaignData['activeQuestions'] as $questionData)
-            $activeQuestions[] = $this->createAdvisorQuestion($questionData,
+        foreach ($campaignData['advisorTree'] as $questionData)
+            $advisorTree[] = $this->createAdvisorQuestion($questionData,
                                                                true);
 
         $campaign->addToAdvisorTree($advisorTree);
