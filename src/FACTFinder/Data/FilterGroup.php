@@ -23,6 +23,11 @@ class FilterGroup extends \ArrayIterator
      */
     private $detailedLinkCount;
 
+     /**
+     * @var int
+     */
+    private $decimalPlaces;
+
     /**
      * @var string
      */
@@ -55,6 +60,7 @@ class FilterGroup extends \ArrayIterator
         array $filters = array(),
         $name = '',
         FilterStyle $style = null,
+        $decimalPlaces = 1,
         $detailedLinkCount = 0,
         $unit = '',
         FilterSelectionType $selectionType = null,
@@ -66,6 +72,7 @@ class FilterGroup extends \ArrayIterator
         $this->name = (string)$name;
         $filterStyleEnum = FF::getClassName('Data\FilterStyle');
         $this->style = $style ?: $filterStyleEnum::Regular();
+        $this->decimalPlaces = $decimalPlaces;
         $this->detailedLinkCount = (int)$detailedLinkCount;
         $this->unit = (string)$unit;
         $filterSelectionTypeEnum = FF::getClassName('Data\FilterSelectionType');
@@ -117,6 +124,14 @@ class FilterGroup extends \ArrayIterator
     {
         $filterStyleEnum = FF::getClassName('Data\FilterStyle');
         return $this->style == $filterStyleEnum::MultiSelect();
+    }
+
+     /**
+     * @return int
+     */
+    public function getDecimalPlaces()
+    {
+        return $this->decimalPlaces;
     }
 
     /**

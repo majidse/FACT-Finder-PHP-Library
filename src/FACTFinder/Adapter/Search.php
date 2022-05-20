@@ -362,6 +362,7 @@ class Search extends PersonalisedResponse
             $filters,
             $groupData['name'],
             $filterStyle,
+            $groupData['decimalPlaces'],
             $groupData['detailedLinks'],
             $groupData['unit'],
             $filterSelectionType,
